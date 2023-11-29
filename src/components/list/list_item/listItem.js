@@ -1,7 +1,18 @@
-const ListItem = ({ children }) => {
-  const handleOnClick = (text) => console.log(text);
+import { useState } from "react";
 
-  return <li onClick={() => handleOnClick(children)}>{children}</li>;
+const ListItem = ({ children }) => {
+  const [className, setClassName] = useState(null);
+
+  const handleOnClick = () => {
+    setClassName(className == null ? "colorRed" : null);
+    document.title = children;
+  };
+
+  return (
+    <li className={className} onClick={() => handleOnClick()}>
+      {children}
+    </li>
+  );
 };
 
 export default ListItem;

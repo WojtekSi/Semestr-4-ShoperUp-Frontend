@@ -1,14 +1,5 @@
-import { PageHeader } from "../../components/PageHeader/page_header"
-import { ThemeContext } from "../../context/theme-context";
-import { useContext } from "react";
+import { Page } from "../../components/Page/page";
 
 export const Homepage = () => {
-    const { theme } = useContext(ThemeContext);
-
-    return (
-        <div className="container">
-            <PageHeader />
-            <h1 style={{ backgroundColor: theme.background, color: theme.foreground }}>Homepage</h1>
-        </div>
-    )
-}
+  return <Page label="Homepage" />;
+};
